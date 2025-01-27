@@ -20,3 +20,8 @@ J'ai utilisé createContext pour créer un LanguageContext (context/LanguageCont
 J'ai ajouté un objet translations qui contient toutes les traductions nécessaires ( le recherche , mode , prix ) pour le fr et ang .
 
 # 2.2 Ajouter le sélecteur de langue
+J ai créé un compo qui utilise useContext(LanguageContext) pour accéder a la langue actuelle et à la fonction setLanguage , j'ai ajouté un select avec deux options Fr , EN , puis j ai importé ce compo dans App .
+
+![Capture Fr](image.png) 
+![Capture En](image-1.png)
+

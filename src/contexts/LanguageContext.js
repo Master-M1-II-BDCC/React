@@ -7,6 +7,7 @@ export const LanguageProvider = ({ children }) => {
 
     const translations = {
         fr: {
+            catalogTitle: "Catalogue de Produits",
             lightMode: "Mode Clair",
             darkMode: "Mode Sombre",
             loading: "Chargement...",
@@ -16,6 +17,7 @@ export const LanguageProvider = ({ children }) => {
             searchPlaceholder: "Rechercher un produit...",
         },
         en: {
+            catalogTitle: "Product Catalog",
             lightMode: "Light Mode",
             darkMode: "Dark Mode",
             loading: "Loading...",
