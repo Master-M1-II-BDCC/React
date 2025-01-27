@@ -3,6 +3,7 @@ import ProductList from './components/ProductList';
 import ProductSearch from './components/ProductSearch';
 import ThemeToggle from './components/ThemeToggle';
 import { LanguageProvider } from './contexts/LanguageContext';
+import LanguageSelector from './components/LanguageSelector';
 
 // TODO: Exercice 2.1 - Créer le LanguageContext
 
@@ -23,6 +24,7 @@ const App = () => {
           <div className="d-flex justify-content-end gap-2">
             <ThemeToggle />
             {/* TODO: Exercice 2.2 - Ajouter le sélecteur de langue */}
+            <LanguageSelector/>
           </div>
         </header>
         <main>

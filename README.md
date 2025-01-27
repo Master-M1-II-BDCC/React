@@ -17,5 +17,6 @@
 
 ##  2.1 Créer le LanguageContext
 J'ai utilisé createContext pour créer un LanguageContext (context/LanguageContext) qui contient la langue actuelle et une fonction pour le mettre à jour puis j'ai enveloppé tous les composants de l'app avec LanguageProvider dans App ce qui permet a tous les composants enfants d'accéder à la langue.
+J'ai ajouté un objet translations qui contient toutes les traductions nécessaires ( le recherche , mode , prix ) pour le fr et ang .
 
-
+# 2.2 Ajouter le sélecteur de langue
