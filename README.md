@@ -42,3 +42,10 @@ Dans `ProductList`, j'ai ajouté un bouton pour déclencher cette fonction :
 
 ![boutton de rechargement](captures/Ex4/4.1.a.png)
 ![chargement](captures/Ex4/4.1.b.png)
+
+## 4.2 Implémenter la pagination
+J’ai ajouté un système de pagination pour éviter d'afficher tous les produits d'un coup. J’ai créé un état currentPage pour suivre la page actuelle et totalPages pour connaître le nombre total de pages. À chaque changement de page, je mets à jour currentPage, et grâce à useEffect, les produits correspondants sont rechargés depuis l’API. Ensuite, j’ai ajouté des boutons "Précédent" et "Suivant" pour naviguer entre les pages, avec une désactivation automatique si on est à la première ou dernière page. Maintenant, la liste des produits est plus fluide et facile à parcourir
+
+![Pagination](captures/Ex4/4.2.png)
+
+

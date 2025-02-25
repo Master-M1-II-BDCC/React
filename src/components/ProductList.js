@@ -3,21 +3,25 @@ import { ThemeContext } from '../App';
 import useProductSearch from '../hooks/useProductSearch';
 import { LanguageContext } from '../contexts/LanguageContext';
 
-const ProductList = ({searchTerm}) => {
+const ProductList = ({ searchTerm }) => {
   const { isDarkTheme } = useContext(ThemeContext);
   // TODO: Exercice 2.1 - Utiliser le LanguageContext pour les traductions
   const { translations } = useContext(LanguageContext);
 
-  const { 
-    products, 
-    loading, 
+  const {
+    products,
+    loading,
     error,
     // TODO: Exercice 4.1 - Récupérer la fonction de rechargement
     reloadProducts,
     // TODO: Exercice 4.2 - Récupérer les fonctions et états de pagination
+    currentPage,
+    totalPages,
+    nextPage,
+    previousPage
   } = useProductSearch();
-  
-  const filtredProducts = products.filter((product) => 
+
+  const filtredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -28,13 +32,13 @@ const ProductList = ({searchTerm}) => {
       </div>
     </div>
   );
-  
+
   if (error) return (
     <div className="alert alert-danger" role="alert">
       {translations.error}: {error}
     </div>
   );
-  
+
   return (
     <div>
       {/* TODO: Exercice 4.1 - Ajouter le bouton de rechargement */}
@@ -46,9 +50,9 @@ const ProductList = ({searchTerm}) => {
           <div key={product.id} className="col">
             <div className={`card h-100 ${isDarkTheme ? 'bg-dark text-light' : ''}`}>
               {product.thumbnail && (
-                <img 
-                  src={product.thumbnail} 
-                  className="card-img-top" 
+                <img
+                  src={product.thumbnail}
+                  className="card-img-top"
                   alt={product.title}
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
@@ -65,13 +69,12 @@ const ProductList = ({searchTerm}) => {
           </div>
         ))}
       </div>
-      
+
       {/* TODO: Exercice 4.2 - Ajouter les contrôles de pagination */}
-      {/* Exemple de structure pour la pagination :
       <nav className="mt-4">
         <ul className="pagination justify-content-center">
           <li className="page-item">
-            <button className="page-link" onClick={previousPage}>
+            <button className="page-link" onClick={previousPage} disabled={currentPage === 1}>
               Précédent
             </button>
           </li>
@@ -81,13 +84,12 @@ const ProductList = ({searchTerm}) => {
             </span>
           </li>
           <li className="page-item">
-            <button className="page-link" onClick={nextPage}>
+            <button className="page-link" onClick={nextPage} disabled={currentPage === totalPages}>
               Suivant
             </button>
           </li>
         </ul>
       </nav>
-      */}
     </div>
   );
 };
