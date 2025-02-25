@@ -25,3 +25,14 @@ J ai créé un compo qui utilise useContext(LanguageContext) pour accéder a la 
 ![Capture Fr](image.png) 
 ![Capture En](image-1.png)
 
+
+# Exercice 3 : Hooks Personnalisés
+
+# 3.1 Créer le hook useDebounce
+J'ai utilisé useState et useEffect pour créer un hook useDebounce qui permet de retarder la mise à jour d'une valeur après un certain délai. Cela est particulièrement utile pour des champs de recherche ou pour éviter des appels API excessifs.
+
+# 3.2 Créer le hook useLocalStorage
+J'ai créé un hook useLocalStorage qui permet de stocker et récupérer une valeur dans localStorage tout en maintenant un état réactif. Cela permet de persister des données comme la langue ou les préférences de l'utilisateur.
+
+
+
