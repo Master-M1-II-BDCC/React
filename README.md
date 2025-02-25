@@ -26,7 +26,7 @@ J ai créé un compo qui utilise useContext(LanguageContext) pour accéder a la 
 ![Capture En](image-1.png)
 
 
-# Exercice 3 : Hooks Personnalisés
+# Exercice 3 : Gestion Asynchrone et Pagination
 
 # 3.1 Créer le hook useDebounce
 J'ai utilisé useState et useEffect pour créer un hook useDebounce qui permet de retarder la mise à jour d'une valeur après un certain délai. Cela est particulièrement utile pour des champs de recherche ou pour éviter des appels API excessifs.
@@ -34,5 +34,11 @@ J'ai utilisé useState et useEffect pour créer un hook useDebounce qui permet d
 # 3.2 Créer le hook useLocalStorage
 J'ai créé un hook useLocalStorage qui permet de stocker et récupérer une valeur dans localStorage tout en maintenant un état réactif. Cela permet de persister des données comme la langue ou les préférences de l'utilisateur.
 
+# Exercice 4 : Gestion Asynchrone et Pagination
 
+## 4.1 Ajouter le bouton de rechargement
+J'ai ajouté une fonction de rechargement dans `useProductSearch` qui permet de récupérer à nouveau la liste des produits en cas d'erreur ou de mise à jour nécessaire.
+Dans `ProductList`, j'ai ajouté un bouton pour déclencher cette fonction :
 
+![boutton de rechargement](captures/Ex4/4.1.a.png)
+![chargement](captures/Ex4/4.1.b.png)

@@ -28,6 +28,20 @@ const useProductSearch = () => {
   }, []); // TODO: Exercice 4.2 - Ajouter les dépendances pour la pagination
 
   // TODO: Exercice 4.1 - Ajouter la fonction de rechargement
+  const reloadProducts = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(`https://api.daaif.net/products?delay=1000`);
+      if (!response.ok) throw new Error('Erreur réseau');
+      const data = await response.json();
+      setProducts(data.products);
+    } catch (err) {
+      setError(err.message);
+    }
+    setLoading(false);
+  };
+
   // TODO: Exercice 4.2 - Ajouter les fonctions pour la pagination
 
   return { 
@@ -35,6 +49,7 @@ const useProductSearch = () => {
     loading, 
     error,
     // TODO: Exercice 4.1 - Retourner la fonction de rechargement
+    reloadProducts,
     // TODO: Exercice 4.2 - Retourner les fonctions et états de pagination
   };
 };
